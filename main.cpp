@@ -10,18 +10,17 @@
 
 int main() {
 
-
     std::vector<RandomDrawResult> results = {
             RandomDrawResult(50, 10, 5),
             RandomDrawResult(30, 20, 10),
             RandomDrawResult(80, 5, 2)
-    }
+    };
 
     RandomDraw draw(results);
     for (int i = 0; i < 10; i++) {
         RandomDrawResult::ResultType result = draw.draw();
 
-        witch (result) {
+        switch (result) {
             case RandomDrawResult::ResultType::SUCCESS:
                 std::cout << "Réussite !" << std::endl;
             break;
